@@ -1,5 +1,9 @@
 # #02 | Pengantar Bahasa Pemrograman Dart - Bagian 1
 
+## NIM : 2241720015
+
+## Nama : Doni Wahyu Kurniawawn
+
 ## Hands-on with Dart
 
 1. Hello World with Dart
