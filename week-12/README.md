@@ -58,3 +58,18 @@
 ## Praktikum 5: Menangani Respon Error pada Async Code
 
 ![praktikum_5](./docs/praktikum_5.gif)\
+
+**Soal 10** - Panggil method handleError() tersebut di ElevatedButton, lalu run. Apa hasilnya? Jelaskan perbedaan kode langkah 1 dan 4!
+>
+> - Langkah 1: Menggunakan .then(), .catchError(), dan .whenComplete() untuk menangani hasil dan error, serta menjalankan tindakan setelah selesai.
+>
+> - Langkah 4: Menggunakan try-catch-finally dalam method handleError() untuk menangani error dan aksi selesai dalam satu method yang lebih terstruktur.
+
+## Praktikum 6: Menggunakan Future dengan StatefulWidget
+
+![praktikum_6](./docs/praktikum_6.jpeg)\
+![praktikum_6](./docs/praktikum_6.1.gif)\
+
+**Soal 12** - Apakah Anda mendapatkan koordinat GPS ketika run di browser? Mengapa demikian?
+> Jika aplikasi dijalankan di browser, GPS memang tidak berfungsi karena browser memiliki keterbatasan dalam mengakses fitur GPS perangkat. Sebaliknya, aplikasi mobile bisa mengakses GPS dengan lancar karena memiliki izin lokasi yang diatur oleh sistem operasi.
+
