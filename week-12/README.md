@@ -73,3 +73,9 @@
 **Soal 12** - Apakah Anda mendapatkan koordinat GPS ketika run di browser? Mengapa demikian?
 > Jika aplikasi dijalankan di browser, GPS memang tidak berfungsi karena browser memiliki keterbatasan dalam mengakses fitur GPS perangkat. Sebaliknya, aplikasi mobile bisa mengakses GPS dengan lancar karena memiliki izin lokasi yang diatur oleh sistem operasi.
 
+## Praktikum 7: Manajemen Future dengan FutureBuilder
+
+![praktikum_8](./docs/praktikum_8.gif)\
+
+**Soal 13** - Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?
+> UI masih sama saja, karena tidak dilakukan perubahan pada kode UI yang ditampilkan ke pengguna. Hanya saja ada jeda 3 dtik tambahan untuk lokasi ditampilkan akibat ditambahkannya future delayed
