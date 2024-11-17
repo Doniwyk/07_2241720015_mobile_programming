@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
-import 'package:async/async.dart';
 
 void main() => runApp(const MyApp());
 
@@ -32,8 +31,7 @@ class FuturePage extends StatefulWidget {
 class _FuturePageState extends State<FuturePage> {
   String result = '';
   String bookData = '';
-  bool isLoading = false; // Variable to track loading state
-  late Completer<int> completer; // Late variable for Completer
+  bool isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -48,13 +46,28 @@ class _FuturePageState extends State<FuturePage> {
             ElevatedButton(
               child: const Text('GO!'),
               onPressed: () {
-                returnFG(); // Memanggil method returnFG() untuk menjalankan semua Future
+                setState(() {
+                  isLoading = true;
+                });
+                returnError().then((value) {
+                  setState(() {
+                    result = 'Success';
+                  });
+                }).catchError((onError) {
+                  setState(() {
+                    result = onError.toString();
+                  });
+                }).whenComplete(() {
+                  setState(() {
+                    isLoading = false;
+                  });
+                  print('Complete');
+                });
               },
             ),
             const Spacer(),
-            if (isLoading)
-              const CircularProgressIndicator(), // Show loading indicator when isLoading is true
-            if (!isLoading) Text(result), // Show result only when not loading
+            if (isLoading) const CircularProgressIndicator(),
+            if (!isLoading) Text(result),
             const Spacer(),
             Text(bookData),
             const Spacer(),
@@ -99,49 +112,8 @@ class _FuturePageState extends State<FuturePage> {
     return http.get(url);
   }
 
-  Future<int> getNumber() {
-    completer = Completer<int>();
-    calculate();
-    return completer.future;
-  }
-
-  Future<void> calculate() async {
-    try {
-      await Future.delayed(const Duration(seconds: 5));
-      completer.complete(42); // Menyelesaikan Future dengan nilai 42
-    } catch (_) {
-      completer.completeError(
-          {}); // Menyelesaikan Future dengan error jika terjadi masalah
-    }
-  }
-
-  // Method baru yang ditambahkan
-  void returnFG() {
-    FutureGroup<int> futureGroup = FutureGroup<int>();
-    futureGroup.add(returnOneAsync());
-    futureGroup.add(returnTwoAsync());
-    futureGroup.add(returnThreeAsync());
-    futureGroup.close();
-
-    setState(() {
-      isLoading =
-          true; // Mengatur loading state menjadi true saat Future dijalankan
-    });
-
-    futureGroup.future.then((List<int> value) {
-      int total = 0;
-      for (var element in value) {
-        total += element;
-      }
-      setState(() {
-        result = total.toString(); // Menampilkan total hasil penjumlahan di UI
-        isLoading = false; // Menghentikan loading state setelah hasil diperoleh
-      });
-    }).catchError((_) {
-      setState(() {
-        result = 'An error occurred'; // Menampilkan pesan error
-        isLoading = false; // Menghentikan loading state jika terjadi error
-      });
-    });
+  Future returnError() async {
+    await Future.delayed(const Duration(seconds: 2));
+    throw Exception('Something terrible happened!');
   }
 }

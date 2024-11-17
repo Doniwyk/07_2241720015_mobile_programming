@@ -48,3 +48,13 @@
 ## Praktikum 4: Memanggil Future secara paralel
 
 ![praktikum_4](./docs/praktikum_4.gif)\
+
+**Soal 8** - Jelaskan maksud perbedaan kode langkah 1 dan 4!
+>
+> - Langkah 1 (FutureGroup): Memerlukan penanganan manual untuk menambahkan dan menutup grup Future, sehingga lebih kompleks.
+>
+> - Langkah 4 (Future.wait): Lebih sederhana, cukup dengan satu baris kode untuk menunggu beberapa Future selesai secara paralel.
+
+## Praktikum 5: Menangani Respon Error pada Async Code
+
+![praktikum_5](./docs/praktikum_5.gif)\
