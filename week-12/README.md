@@ -79,3 +79,5 @@
 
 **Soal 13** - Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?
 > UI masih sama saja, karena tidak dilakukan perubahan pada kode UI yang ditampilkan ke pengguna. Hanya saja ada jeda 3 dtik tambahan untuk lokasi ditampilkan akibat ditambahkannya future delayed
+**Soal 14** - Apakah ada perbedaan UI dengan langkah sebelumnya? Mengapa demikian?
+> Dengan penambahan ini, jika terjadi error, UI akan menampilkan pesan 'Something terrible happened!'
