@@ -89,3 +89,9 @@
 **Soal 16** - Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
 > etika tombol di layar kedua diklik, layar kedua menutup dan mengembalikan warna ke layar pertama. Layar pertama menerima warna tersebut dan memperbarui latar belakangnya melalui setState(). Hal ini terjadi karena Navigator.pop() mengembalikan data ke Navigator.push(), yang menunggu hasil dan memperbarui UI.
 
+## Praktikum 9: Memanfaatkan async/await dengan Widget Dialog
+
+![praktikum_9](./docs/praktikum_9.gif)\
+
+**Soal 17**- Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
+> Saat tombol diklik, warna latar belakang layar berubah sesuai pilihan karena Navigator.pop() mengembalikan warna dan setState() memperbarui UI dengan warna tersebut.
