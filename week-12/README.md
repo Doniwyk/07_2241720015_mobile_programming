@@ -75,9 +75,17 @@
 
 ## Praktikum 7: Manajemen Future dengan FutureBuilder
 
-![praktikum_8](./docs/praktikum_8.gif)\
+![praktikum_7](./docs/praktikum_7.gif)\
 
 **Soal 13** - Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?
 > UI masih sama saja, karena tidak dilakukan perubahan pada kode UI yang ditampilkan ke pengguna. Hanya saja ada jeda 3 dtik tambahan untuk lokasi ditampilkan akibat ditambahkannya future delayed
 **Soal 14** - Apakah ada perbedaan UI dengan langkah sebelumnya? Mengapa demikian?
 > Dengan penambahan ini, jika terjadi error, UI akan menampilkan pesan 'Something terrible happened!'
+
+## Praktikum 8: Navigation route dengan Future Function
+
+![praktikum_8](./docs/praktikum_8.gif)\
+
+**Soal 16** - Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
+> etika tombol di layar kedua diklik, layar kedua menutup dan mengembalikan warna ke layar pertama. Layar pertama menerima warna tersebut dan memperbarui latar belakangnya melalui setState(). Hal ini terjadi karena Navigator.pop() mengembalikan data ke Navigator.push(), yang menunggu hasil dan memperbarui UI.
+
