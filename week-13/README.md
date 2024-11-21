@@ -32,3 +32,19 @@
 >   - Mendengarkan stream secara asinkron dengan callback.
 >   - Tidak memerlukan fungsi async.
 >   - Lebih fleksibel untuk menangani banyak listener atau proses real-time.
+
+## Praktikum 2: Stream Controllers dan Sinks
+
+**Soal 6** - Jelaskan maksud kode langkah 8 dan 10 tersebut!
+
+> - Langkah 8: Edit initState()
+>   - Inisialisasi NumberStream dan StreamController.
+>   - Mendengarkan data baru dari stream menggunakan stream.listen.
+>   - Setiap angka baru yang diterima memperbarui variabel lastNumber dengan setState, sehingga UI diperbarui secara real-time.
+>
+> - Langkah 10: Tambah addRandomNumber()
+>
+>   - Menghasilkan angka acak menggunakan Random.
+>   - Menambahkan angka acak tersebut ke stream melalui metode addNumberToSink. Angka ini diteruskan ke listener untuk memperbarui UI.
+
+![praktikum_2](./docs/P2.gif)\
