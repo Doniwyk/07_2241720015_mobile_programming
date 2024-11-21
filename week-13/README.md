@@ -18,3 +18,4 @@
 >   2. t % colors.length: Mengambil indeks warna dari daftar colors, berulang dari awal saat mencapai akhir.
 >   3. yield*: Meneruskan warna dari Stream.periodic ke stream getColors.
 
+![praktikum_1](./docs/P1.gif)\
