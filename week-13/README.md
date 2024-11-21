@@ -110,3 +110,12 @@
 
 **Soal 11** - Jelaskan mengapa hal itu bisa terjadi ?
 > Hal itu terjadi karena dua listener (subscription dan subscription2) mendengarkan broadcast stream yang sama. Setiap angka baru yang dikirimkan ke stream diterima oleh kedua listener, sehingga data ditambahkan ke variabel values dua kali, membuat angka bertambah dua kali lebih cepat.
+
+## Praktikum 6: StreamBuilder
+
+**Soal 12** - Jelaskan maksud kode pada langkah 3 dan 7 !
+
+> - Langkah 3: Membuat stream angka acak dengan interval 1 detik menggunakan kelas NumberStream.
+> - Langkah 7: Menggunakan StreamBuilder untuk mendengarkan data dari NumberStream dan menampilkan angka dalam UI secara real-time.
+
+![praktikum_6](./docs/P6.gif)\
