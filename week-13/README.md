@@ -19,3 +19,16 @@
 >   3. yield*: Meneruskan warna dari Stream.periodic ke stream getColors.
 
 ![praktikum_1](./docs/P1.gif)\
+
+**Soal 5** - Jelaskan perbedaan menggunakan listen dan await for (langkah 9) !
+>
+> - await for:
+>   - Membaca stream secara sinkron dalam bentuk perulangan.
+>   - Membutuhkan fungsi async.
+>   - Cocok untuk pengolahan data terstruktur dan satu listener.
+>
+> - listen:
+>
+>   - Mendengarkan stream secara asinkron dengan callback.
+>   - Tidak memerlukan fungsi async.
+>   - Lebih fleksibel untuk menangani banyak listener atau proses real-time.
