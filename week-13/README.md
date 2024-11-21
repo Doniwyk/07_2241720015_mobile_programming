@@ -48,3 +48,20 @@
 >   - Menambahkan angka acak tersebut ke stream melalui metode addNumberToSink. Angka ini diteruskan ke listener untuk memperbarui UI.
 
 ![praktikum_2](./docs/P2.gif)\
+
+**Soal 7** - Jelaskan maksud kode langkah 13 sampai 15 tersebut!
+>
+> - Langkah 13
+>
+>   - Fungsi addError() menambahkan error ke stream menggunakan controller.sink.addError('error').
+>   - Error ini akan diteruskan ke listener yang mendengarkan stream.
+>
+> - Langkah 14
+>
+>   - Menambahkan handler onError ke stream.listen di initState.
+>   - Jika stream menerima error, UI akan diperbarui (setState) dengan menampilkan nilai default (contoh: -1).
+>
+> - Langkah 15
+>
+>   - Dua baris untuk menghasilkan dan menambahkan angka ke stream dikomentari.
+>   - Sebagai gantinya, fungsi addError() dipanggil untuk mengirimkan error ke stream.
