@@ -65,3 +65,19 @@
 >
 >   - Dua baris untuk menghasilkan dan menambahkan angka ke stream dikomentari.
 >   - Sebagai gantinya, fungsi addError() dipanggil untuk mengirimkan error ke stream.
+
+## Praktikum 3: Injeksi Data ke Streams
+
+**Soal 8** - Jelaskan maksud kode langkah 1-3 tersebut!
+
+> - Langkah 1: Deklarasi transformer sebagai StreamTransformer untuk memodifikasi data di stream.
+> - Langkah 2:
+>   - handleData: Memodifikasi data (mengalikan nilai dengan 10).
+>   - handleError: Mengganti error dengan nilai -1.
+>   - handleDone: Menutup stream saat selesai.
+> - Langkah 3:
+>   - Menerapkan transformer ke stream dengan stream.transform(transformer).
+>   - Mendengarkan data hasil transformasi dan memperbarui UI.
+>   - Menangani error dengan memperbarui UI menggunakan nilai -1.
+
+![praktikum_2](./docs/P3.gif)\
