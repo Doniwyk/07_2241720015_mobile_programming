@@ -94,3 +94,19 @@
 
 ![praktikum_4](./docs/P4.gif)\
 ![praktikum_4](./docs/onDone.png)\
+
+## Praktikum 5: Multiple stream subscriptions
+
+**Soal 10** - Jelaskan mengapa error itu bisa terjadi ?
+
+![praktikum_5](./docs/error1.png)\
+
+> - Error "Bad state: Stream has already been listened to" terjadi karena stream default hanya dapat memiliki satu listener secara bersamaan.
+> - stream.listen dipanggil dua kali: satu untuk subscription dan satu lagi untuk subscription2.
+> - Stream yang dibuat secara default adalah single-subscription stream, artinya hanya satu listener yang diperbolehkan pada satu waktu.
+> - Ketika listener kedua (subscription2) mencoba mendengarkan stream yang sama, error terjadi.
+
+![praktikum_5](./docs/P5.gif)\
+
+**Soal 11** - Jelaskan mengapa hal itu bisa terjadi ?
+> Hal itu terjadi karena dua listener (subscription dan subscription2) mendengarkan broadcast stream yang sama. Setiap angka baru yang dikirimkan ke stream diterima oleh kedua listener, sehingga data ditambahkan ke variabel values dua kali, membuat angka bertambah dua kali lebih cepat.
