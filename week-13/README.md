@@ -119,3 +119,67 @@
 > - Langkah 7: Menggunakan StreamBuilder untuk mendengarkan data dari NumberStream dan menampilkan angka dalam UI secara real-time.
 
 ![praktikum_6](./docs/P6.gif)\
+
+## Praktikum 7: BLoC Pattern
+
+**Soal 13** - Jelaskan maksud praktikum ini ! Dimanakah letak konsep pola BLoC-nya ?
+
+> Praktikum ini bertujuan untuk memahami pola BLoC (Business Logic Component), yaitu memisahkan logika bisnis dari antarmuka pengguna (UI). Pola ini membuat kode lebih modular, terorganisir, dan mudah diuji. Pada praktikum ini, angka acak dihasilkan melalui logika di BLoC dan ditampilkan menggunakan StreamBuilder.
+>
+> Konsep Pola BLoC
+>
+> 1. Pemisahan Logika dari UI:
+>       - Logika untuk menghasilkan angka acak ada di kelas RandomNumberBloc, sedangkan UI hanya mendengarkan hasilnya.
+> 2. Stream dan Sink:
+>       - Stream (_randomNumberController): Mengalirkan angka acak ke UI.
+>       - Sink (_generateRandomController): Menerima perintah dari UI untuk menghasilkan angka baru.
+> 3. StreamBuilder untuk UI:
+>       - UI mendengarkan perubahan data melalui stream, sehingga angka di layar otomatis diperbarui.
+>
+> **Letak Pola BLoC dalam Kode**
+>
+> 1. RandomNumberBloc:
+>       - Mengelola logika untuk menghasilkan angka acak dan mengirimkan ke UI melalui stream.
+>
+>           ```dart
+>           class RandomNumberBloc {
+>             final _generateRandomController = StreamController<void>();
+>             final _randomNumberController = StreamController<int>();
+>             Sink<void> get generateRandomNumber => _generateRandomController.sink;
+>             Stream<int> get randomNumber => _randomNumberController.stream;
+>           
+>             RandomNumberBloc() {
+>               _generateRandomController.stream.listen((_) {
+>                 final random = Random().nextInt(10);
+>                 _randomNumberController.sink.add(random);
+>               });
+>             }
+>           
+>             void dispose() {
+>               _generateRandomController.close();
+>               _randomNumberController.close();
+>             }
+>
+>            ```
+>
+> 2. RandomScreen:
+>       - streamBuilder mendengarkan stream untuk menampilkan angka, dan tombol memicu sink untuk menghasilkan angka baru.
+>
+>           ```dart
+>           StreamBuilder<int>(
+>             stream: widget._bloc.randomNumber,
+>             initialData: 0,
+>             builder: (context, snapshot) {
+>               return Text('Random Number: ${snapshot.data}');
+>             },
+>           )
+>           ```
+>
+>           ```dart
+>           FloatingActionButton(
+>             onPressed: () => widget._bloc.generateRandomNumber.add(null),
+>             child: const Icon(Icons.refresh),
+>           ),
+>           ```
+
+![praktikum_7](./docs/P7.gif)\
