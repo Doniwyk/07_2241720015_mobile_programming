@@ -66,6 +66,8 @@
 >   - Dua baris untuk menghasilkan dan menambahkan angka ke stream dikomentari.
 >   - Sebagai gantinya, fungsi addError() dipanggil untuk mengirimkan error ke stream.
 
+![praktikum_2](./docs/P2.1.gif)\
+
 ## Praktikum 3: Injeksi Data ke Streams
 
 **Soal 8** - Jelaskan maksud kode langkah 1-3 tersebut!
@@ -80,4 +82,15 @@
 >   - Mendengarkan data hasil transformasi dan memperbarui UI.
 >   - Menangani error dengan memperbarui UI menggunakan nilai -1.
 
-![praktikum_2](./docs/P3.gif)\
+![praktikum_3](./docs/P3.gif)\
+
+## Praktikum 4: Subscribe ke stream events
+
+**Soal 9** - Jelaskan maksud kode langkah 2, 6 dan 8 tersebut!
+
+> - Langkah 2: Menyiapkan listener untuk memperbarui data secara real-time.
+> - Langkah 6: Menghentikan listener di dispose() untuk mencegah kebocoran memori.
+> - Langkah 8: Menghindari error dengan memverifikasi apakah stream masih terbuka sebelum menambahkan angka baru.
+
+![praktikum_4](./docs/P4.gif)\
+![praktikum_4](./docs/onDone.png)\
